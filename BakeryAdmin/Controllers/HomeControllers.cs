@@ -5,10 +5,12 @@ namespace BakeryAdmin.Controllers
 {
   public class HomeController : Controller
   {
+
     [Route("/")]
     public ActionResult Index()
     {
-      return View(Order);
+      Order starterItem = new Order("Add first item to To Do List");
+      return View(starterItem);
     }
 
   }
