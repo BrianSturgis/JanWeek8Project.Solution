@@ -14,6 +14,16 @@ namespace BakeryAdmin.Models
 
     private static List<Order> _instances = new List<Order> { };
 
+    public Order(string name,string description,string price,string date)
+    {
+      Name = name;
+      Description = description;
+      Price = price;
+      Date = date;
+    
+      _instances.Add(this);
+      Id = _instances.Count;
+    }
 
 
 
