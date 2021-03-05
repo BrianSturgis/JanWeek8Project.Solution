@@ -8,8 +8,7 @@ namespace BakeryAdmin.Controllers
     [Route("/")]
     public ActionResult Index()
     {
-      Order starterOrder = new Order("Add first order for the bakery");
-      return View(starterOrder);
+      return View(Order);
     }
 
   }
