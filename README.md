@@ -73,6 +73,9 @@ expect:CollectionAssert.AreEqual(newOrder, result);
 test:GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
 expect:Assert.AreEqual(1, result);
 
+test:Find_ReturnsCorrectOrder_Order()
+expect: Assert.AreEqual(newOrder2, result);
+
 ```
 
 ## Technologies Used
