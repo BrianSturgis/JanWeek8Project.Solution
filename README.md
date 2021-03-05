@@ -55,45 +55,6 @@ email Brian Sturgis @ <sturujisu@gmail.com>
 
 ## TESTS
 ```CS
-Bread_Object_Bread;
-
-test:should create an instance of Bread
-Assert.AreEqual(typeof(Bread), newBread);
-
-Bread_BreadQuantity_Int;
-
-test:newBread.Quantity
-expect:Bread newBread = new Bread  Assert.AreEqual(0, result).
-
-Bread_BreadTotal_Int;
-
-test:newBread.Total;
-expect:Bread newBread = new Bread  Assert.AreEqual(0, result).
-
-Bread_SinglePastryNoDiscount_Int;
-
-test:newBread.Total;
-expect:Assert.AreEqual(0, newPastry.PastryTotal(quantity);
-
-Pastry_Object_Pastry;
-
-test:should create an instance of Pastry
-Assert.AreEqual(typeof(Pastry), newPastry);
-
-Pastry_PastryQuantity_Int;
-
-test:newPastry.Quantity
-expect:Pastry newPastry = new Pastry  Assert.AreEqual(0, result).
-
-Pastry_PastryTotal_Int;
-
-test:newPastry.Total;
-expect:Pastry newPastry = new Pastry  Assert.AreEqual(0, result).
-
-Pastry_SinglePastryNoDiscount_Int;
-
-test:newPastry.Total;
-expect:Assert.AreEqual(0, newPastry.PastryTotal(quantity);
 
 ```
 
