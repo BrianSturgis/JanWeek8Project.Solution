@@ -55,8 +55,23 @@ email Brian Sturgis @ <sturujisu@gmail.com>
 
 ## TESTS
 ```CS
+test:OrderConstructor_CreatesInstanceOfOrder_Order()
+expect:Assert.AreEqual(typeof(Order), newOrder.GetType());
 
+test:GetDescription_ReturnsDescription_String()
+expect: Assert.AreEqual(description, result);
 
+test:SetDescription_SetDescription_String()
+expect:Assert.AreEqual(updatedDescription, result);
+
+test:GetAll_ReturnsEmptyList_OrderList()
+expect:CollectionAssert.AreEqual(newOrder, result);
+
+test:GetAll_ReturnsOrders_OrderList()
+expect:CollectionAssert.AreEqual(newOrder, result);
+
+test:GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+expect:Assert.AreEqual(1, result);
 
 ```
 
