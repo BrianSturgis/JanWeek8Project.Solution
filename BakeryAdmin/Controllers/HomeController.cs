@@ -9,23 +9,9 @@ namespace BakeryAdmin.Controllers
   {
 
     [HttpGet("/")]
-    public ActionResult Index()
-    {
-      List<Order> allOrders = Order.GetAll();
-      return View(allOrders);
-    }
-    
-    [HttpGet("/Orders/new")]
-    public ActionResult CreateForm()
-    {
-      return View();
-    }
-
-    [HttpPost("/Orders")]
-    public ActionResult Create(string description)
-    {
-      Order myOrder = new Order(description);
-      return RedirectToAction("Index");
-    }
+      public ActionResult Index()
+      {
+        return View();
+      }
   }
 }
