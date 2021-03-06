@@ -65,10 +65,28 @@ namespace BakeryAdmin.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    
+    [TestMethod]
+    public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      string description = "Walk the dog.";
+      Order newOrder = new Order(description);
 
+      int result = newOrder.Id;
 
+      Assert.AreEqual(1, result);
+    }
 
-  }
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string description01 = "Walk the dog";
+      string description02 = "Wash the dishes";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
 
+      Order result = Order.Find(2);
+
+      Assert.AreEqual(newItem2, result);
+    }
+}
 }
