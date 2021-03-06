@@ -1,5 +1,15 @@
+@using BakeryAdmin.Models;
+
 <h1>Bakery Order</h1>
+  @if (Model.Count == 0)
+  {
+    <p>There are no items in the list.</p>
+  }
 <ul>
-  <li>@Model.Description</li>
+  @foreach (Order order in Model)
+  {
+    <li>@order.Description</li>
+  }
+
 </ul>
-<a href="/Orders/new">Add a new item.</a>
+<a href="/Orders/new">Add a new item to your order.</a>

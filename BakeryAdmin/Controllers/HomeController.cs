@@ -1,6 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using BakeryAdmin.Models;
+using System.Collections.Generic;
 
 namespace BakeryAdmin.Controllers
 {
@@ -10,8 +11,8 @@ namespace BakeryAdmin.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      Order starterItem = new Order("Add an order ");
-      return View(starterItem);
+      List<Order> allOrders = Order.GetAll();
+      return View(allOrders);
     }
     
     [HttpGet("/Orders/new")]
@@ -24,7 +25,7 @@ namespace BakeryAdmin.Controllers
     public ActionResult Create(string description)
     {
       Order myOrder = new Order(description);
-      return View("Index", myOrder);
+      return RedirectToAction("Index");
     }
   }
 }
