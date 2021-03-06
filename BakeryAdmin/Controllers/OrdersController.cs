@@ -15,7 +15,7 @@ namespace BakeryAdmin.Controllers
     }
 
     [HttpGet("/Orders/new")]
-    public ActionResult CreateForm()
+    public ActionResult New()
     {
       return View();
     }
@@ -31,6 +31,12 @@ namespace BakeryAdmin.Controllers
     {
       Order.ClearAll();
       return View();
+    }
+    [HttpGet("/Orders/{id}")]
+    public ActionResult Show(int id)
+    {
+      Order foundOrder = Order.Find(id);
+      return View(foundOrder);
     }
 
   }
