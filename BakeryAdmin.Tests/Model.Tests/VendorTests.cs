@@ -42,7 +42,5 @@ namespace BakeryAdmin.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
-
-
   }
 }
