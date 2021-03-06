@@ -7,8 +7,12 @@ using System;
 namespace BakeryAdmin.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -28,18 +32,40 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
-      //Arrange
       string description = "Walk the dog.";
       Order newOrder = new Order(description);
 
-      //Act
       string updatedDescription = "Do the dishes";
       newOrder.Description = updatedDescription;
       string result = newOrder.Description;
 
-      //Assert
       Assert.AreEqual(updatedDescription, result);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Order> { };
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      string description01 = "Walk the dog";
+      string description02 = "Wash the dishes";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newList, result);
+    }
+
+    
 
 
 
