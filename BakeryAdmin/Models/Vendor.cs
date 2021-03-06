@@ -15,8 +15,5 @@ namespace BakeryAdmin.Models
       Id = _instances.Count;
       Orders = new List<Order>{};
     }
-
-
   }
-
 }
