@@ -86,7 +86,7 @@ namespace BakeryAdmin.Tests
 
       Order result = Order.Find(2);
 
-      Assert.AreEqual(newItem2, result);
+      Assert.AreEqual(newOrder2, result);
     }
 }
 }
