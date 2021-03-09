@@ -83,8 +83,9 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
-      string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      string orderTitle01 = "Allora Cafe food";
+      string description = "veggies";
+      Order newOrder = new Order(description,orderTitle01);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Work";
       Vendor newVendor = new Vendor(name);

@@ -6,11 +6,13 @@ namespace BakeryAdmin.Models
   public class Order
   {
     public string Description { get; set; }
+    public string OrderTitle { get; set; }
     public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
 
-    public Order(string description)
+    public Order(string orderTitle, string description)
     {
+      OrderTitle = orderTitle;
       Description = description;
       _instances.Add(this);
       Id = _instances.Count;

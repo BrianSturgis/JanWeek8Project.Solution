@@ -2,7 +2,24 @@
 
 <form action="/vendors/@Model.Id/orders" method="post">
   <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
-  <label for="orderDescription">order Description</label>
-  <input id="orderDescription" name="orderDescription" type="text">
+  <label for="orderTitle">Order Title</label>
+        <input id="orderTitle" name="orderTitle" type="text">
+        <br>
+        <label for="orderDescription">Item Description</label>
+        <input id="orderDescription" name="orderDescription" type="text">
+        <br>
+        <label for="quantityBread">Quantity of Bread</label>
+        <input id="quantityBread" name="quantityBread" type="number" placeholder="1">
+        <br>
+        <label for="quantityPastry">Quantity of Pastry</label>
+        <input id="quantityPastry" name="quantityPastry" type="number" placeholder="1">
+        <br>
+        <label for="invoiceTotal">Invoice Total</label>
+        <input id="invoiceTotal" name="invoiceTotal" type="number" placeholder="1">
+        <br>
+        <label for="orderDate">Day of Order</label>
+        <input id="orderDate" name="orderDate" type="date">
+        <br>
+  
   <button type='submit'>Add order</button>
 </form>

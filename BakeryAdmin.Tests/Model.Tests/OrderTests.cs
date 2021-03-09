@@ -16,15 +16,16 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order("test","test");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
+      string orderTitle = "Test Title";
       string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(orderTitle,description);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
@@ -32,8 +33,9 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
+      string orderTitle = "Test Org Holiday Fundraiser";
       string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(orderTitle,description);
 
       string updatedDescription = "Do the dishes";
       newOrder.Description = updatedDescription;
@@ -54,11 +56,13 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void GetAll_ReturnsOrders_OrderList()
     {
-      string description01 = "Walk the dog";
-      string description02 = "Wash the dishes";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
-      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      string orderTitle01 = "Cafe Allora";
+      string orderTitle02 = "burrito bar";
+      string description01 = "stock";
+      string description02 = "veggies";
+      Order newOrder1 = new Order(description01,orderTitle01);
+      Order newOrder2 = new Order(description02,orderTitle02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2, };
 
       List<Order> result = Order.GetAll();
 
@@ -68,8 +72,9 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
     {
+      string title = "test title";
       string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(description,title);
 
       int result = newOrder.Id;
 
@@ -79,10 +84,12 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void Find_ReturnsCorrectOrder_Order()
     {
+      string orderTitle01 = "Suzie's Cafe";
+      string orderTitle02 = "PAM Gala";
       string description01 = "Walk the dog";
       string description02 = "Wash the dishes";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      Order newOrder1 = new Order(description01,orderTitle01);
+      Order newOrder2 = new Order(description02,orderTitle02);
 
       Order result = Order.Find(2);
 
