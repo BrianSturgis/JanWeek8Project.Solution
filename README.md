@@ -48,8 +48,8 @@ Once the project has been cloned to your computer and you have all the necessary
 
 - Navigate to the project folder, JanWeek8Project.Solution, on your Terminal or CMD.
 - Move to the BakeryAdmin subfolder, and run dotnet build will get bin/ and obj/ folders downloaded for the program to run.
-Move to the PierresBakery.Tests subfolder via the terminal. Running dotnet restore will install other necessary packages listed in project's boilerplate.
-When in the PierresBakery.Tests subfolder, dotnet test will allow you to run the test-driven-development tests for the project's Models.
+Move to the JanWeek8Project.Solution subfolder via the terminal. Running dotnet restore will install other necessary packages listed in project's boilerplate.
+When in the JanWeek8Project.Solution subfolder, dotnet test will allow you to run the test-driven-development tests for the project's Models.
 In the main project folder, dotnet run will run the application in the console.
 
 
