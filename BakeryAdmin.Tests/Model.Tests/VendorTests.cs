@@ -15,7 +15,7 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("test Vendor");
+      Vendor newVendor = new Vendor("test Vendor","test Vendor");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
 
@@ -24,7 +24,8 @@ namespace BakeryAdmin.Tests
     {
       //Arrange
       string name = "Test Vendor";
-      Vendor newVendor = new Vendor(name);
+      string description = "Test description";
+      Vendor newVendor = new Vendor(description,name);
 
       //Act
       string result = newVendor.Name;
@@ -37,8 +38,9 @@ namespace BakeryAdmin.Tests
     public void GetId_ReturnsVendorId_Int()
     {
       //Arrange
+      string description = "Test description";
       string name = "Test Vendor";
-      Vendor newVendor = new Vendor(name);
+      Vendor newVendor = new Vendor(description,name);
 
       //Act
       int result = newVendor.Id;
@@ -53,8 +55,10 @@ namespace BakeryAdmin.Tests
       //Arrange
       string name01 = "Work";
       string name02 = "School";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string description01 = "Recurring twice weekly bread loaf order";
+      string description02 = "New Relic Gala event";
+      Vendor newVendor1 = new Vendor(name01,description01);
+      Vendor newVendor2 = new Vendor(name02,description02);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act
@@ -70,8 +74,10 @@ namespace BakeryAdmin.Tests
       //Arrange
       string name01 = "Work";
       string name02 = "School";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string description01 = "Recurring twice weekly bread loaf order";
+      string description02 = "New Relic Gala event";
+      Vendor newVendor1 = new Vendor(name01,description01);
+      Vendor newVendor2 = new Vendor(name02,description02);
 
       //Act
       Vendor result = Vendor.Find(2);
@@ -83,14 +89,18 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
+      DateTime orderDate01 = new DateTime(2020,12,25);
+      orderDate01.ToString();
+      int invoiceTotal01 = 220;
       string orderTitle01 = "Allora Cafe food";
       string description = "veggies";
       int breadQuantity01 = 20;
       int pastryQuantity01 = 40;
-      Order newOrder = new Order(description,orderTitle01,breadQuantity01,pastryQuantity01);
+      Order newOrder = new Order(orderDate01,invoiceTotal01,description,orderTitle01,breadQuantity01,pastryQuantity01);
       List<Order> newList = new List<Order> { newOrder };
+      string description01 = "Recurring twice weekly bread loaf order";
       string name = "Work";
-      Vendor newVendor = new Vendor(name);
+      Vendor newVendor = new Vendor(name,description01);
       newVendor.AddOrder(newOrder);
 
       List<Order> result = newVendor.Orders;

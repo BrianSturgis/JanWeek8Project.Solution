@@ -5,6 +5,7 @@ namespace BakeryAdmin.Models
 {
   public class Order
   {
+    public DateTime Date { get; set; }
     public int InvoiceTotal { get; set; }
     public int QuantityBread { get; set; }
     public int QuantityPastry { get; set; }
@@ -13,8 +14,9 @@ namespace BakeryAdmin.Models
     public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
 
-    public Order(int invoiceTotal,string orderTitle, string description, int quantityBread, int quantityPastry)
+    public Order(DateTime orderDate,int invoiceTotal,string orderTitle, string description, int quantityBread, int quantityPastry)
     {
+      Date = orderDate;
       InvoiceTotal = invoiceTotal;
       OrderTitle = orderTitle;
       Description = description;

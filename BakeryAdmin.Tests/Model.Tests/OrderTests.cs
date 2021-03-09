@@ -16,19 +16,23 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order(1,"test","test",1,1);
+      DateTime orderDate = new DateTime(2020,12,25);
+      orderDate.ToString();
+      Order newOrder = new Order(orderDate,1,"test","test",1,1);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
+      DateTime orderDate = new DateTime(2020,12,25);
+      orderDate.ToString();
       int invoiceTotal01 = 220;
       string orderTitle = "Test Title";
       string description = "Walk the dog.";
       int breadQuantity = 20;
       int pastryQuantity = 40;
-      Order newOrder = new Order(invoiceTotal01,orderTitle,description,breadQuantity,pastryQuantity);
+      Order newOrder = new Order(orderDate,invoiceTotal01,orderTitle,description,breadQuantity,pastryQuantity);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
@@ -36,11 +40,14 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void SetDescription_SetDescription_String()
     {
+      DateTime orderDate = new DateTime(2020,12,25);
+      orderDate.ToString();
+      int invoiceTotal01 = 220;
       string orderTitle = "Test Org Holiday Fundraiser";
       string description = "Walk the dog.";
       int breadQuantity = 20;
       int pastryQuantity = 40;
-      Order newOrder = new Order(orderTitle,description, breadQuantity,pastryQuantity);
+      Order newOrder = new Order(orderDate,invoiceTotal01,orderTitle,description, breadQuantity,pastryQuantity);
 
       string updatedDescription = "Do the dishes";
       newOrder.Description = updatedDescription;
@@ -61,6 +68,12 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void GetAll_ReturnsOrders_OrderList()
     {
+      DateTime orderDate01 = new DateTime(2020,12,25);
+      orderDate01.ToString();
+      DateTime orderDate02 = new DateTime(2020,12,25);
+      orderDate02.ToString();
+      int invoiceTotal01 = 12;
+      int invoiceTotal02 = 12;
       string orderTitle01 = "Cafe Allora";
       string orderTitle02 = "burrito bar";
       string description01 = "stock";
@@ -69,8 +82,8 @@ namespace BakeryAdmin.Tests
       int pastryQuantity01 = 40;
       int breadQuantity02 = 100;
       int pastryQuantity02 = 100;
-      Order newOrder1 = new Order(description01,orderTitle01,breadQuantity01,pastryQuantity01);
-      Order newOrder2 = new Order(description02,orderTitle02,breadQuantity02,pastryQuantity02);
+      Order newOrder1 = new Order(orderDate01,invoiceTotal01,description01,orderTitle01,breadQuantity01,pastryQuantity01);
+      Order newOrder2 = new Order(orderDate02,invoiceTotal02,description02,orderTitle02,breadQuantity02,pastryQuantity02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2, };
 
       List<Order> result = Order.GetAll();
@@ -81,11 +94,14 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
     {
+      DateTime orderDate01 = new DateTime(2020,12,25);
+      orderDate01.ToString();
+      int invoiceTotal01 = 12;
       string title = "test title";
       string description = "Walk the dog.";
       int breadQuantity01 = 20;
       int pastryQuantity01 = 40;
-      Order newOrder = new Order(description,title,breadQuantity01,pastryQuantity01);
+      Order newOrder = new Order(orderDate01,invoiceTotal01,description,title,breadQuantity01,pastryQuantity01);
 
       int result = newOrder.Id;
 
@@ -95,7 +111,13 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void Find_ReturnsCorrectOrder_Order()
     {
-      string orderTitle01 = "Suzie's Cafe";
+      DateTime orderDate01 = new DateTime(2020,12,25);
+      orderDate01.ToString();
+      DateTime orderDate02 = new DateTime(2020,12,25);
+      orderDate02.ToString();
+      int invoiceTotal01 = 220;
+      int invoiceTotal02 = 800;
+      string orderTitle01 = "Cafe Allora";
       string orderTitle02 = "PAM Gala";
       string description01 = "Walk the dog";
       string description02 = "Wash the dishes";
@@ -103,8 +125,8 @@ namespace BakeryAdmin.Tests
       int pastryQuantity01 = 40;
       int breadQuantity02 = 100;
       int pastryQuantity02 = 100;
-      Order newOrder1 = new Order(description01,orderTitle01,breadQuantity01,pastryQuantity01);
-      Order newOrder2 = new Order(description02,orderTitle02,breadQuantity02,pastryQuantity02);
+      Order newOrder1 = new Order(orderDate01,invoiceTotal01,description01,orderTitle01,breadQuantity01,pastryQuantity01);
+      Order newOrder2 = new Order(orderDate02,invoiceTotal02,description02,orderTitle02,breadQuantity02,pastryQuantity02);
 
       Order result = Order.Find(2);
 
