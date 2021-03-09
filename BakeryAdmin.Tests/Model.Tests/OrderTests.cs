@@ -16,16 +16,19 @@ namespace BakeryAdmin.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test","test");
+      Order newOrder = new Order(1,"test","test",1,1);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
+      int invoiceTotal01 = 220;
       string orderTitle = "Test Title";
       string description = "Walk the dog.";
-      Order newOrder = new Order(orderTitle,description);
+      int breadQuantity = 20;
+      int pastryQuantity = 40;
+      Order newOrder = new Order(invoiceTotal01,orderTitle,description,breadQuantity,pastryQuantity);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
@@ -35,7 +38,9 @@ namespace BakeryAdmin.Tests
     {
       string orderTitle = "Test Org Holiday Fundraiser";
       string description = "Walk the dog.";
-      Order newOrder = new Order(orderTitle,description);
+      int breadQuantity = 20;
+      int pastryQuantity = 40;
+      Order newOrder = new Order(orderTitle,description, breadQuantity,pastryQuantity);
 
       string updatedDescription = "Do the dishes";
       newOrder.Description = updatedDescription;
@@ -60,8 +65,12 @@ namespace BakeryAdmin.Tests
       string orderTitle02 = "burrito bar";
       string description01 = "stock";
       string description02 = "veggies";
-      Order newOrder1 = new Order(description01,orderTitle01);
-      Order newOrder2 = new Order(description02,orderTitle02);
+      int breadQuantity01 = 20;
+      int pastryQuantity01 = 40;
+      int breadQuantity02 = 100;
+      int pastryQuantity02 = 100;
+      Order newOrder1 = new Order(description01,orderTitle01,breadQuantity01,pastryQuantity01);
+      Order newOrder2 = new Order(description02,orderTitle02,breadQuantity02,pastryQuantity02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2, };
 
       List<Order> result = Order.GetAll();
@@ -74,7 +83,9 @@ namespace BakeryAdmin.Tests
     {
       string title = "test title";
       string description = "Walk the dog.";
-      Order newOrder = new Order(description,title);
+      int breadQuantity01 = 20;
+      int pastryQuantity01 = 40;
+      Order newOrder = new Order(description,title,breadQuantity01,pastryQuantity01);
 
       int result = newOrder.Id;
 
@@ -88,8 +99,12 @@ namespace BakeryAdmin.Tests
       string orderTitle02 = "PAM Gala";
       string description01 = "Walk the dog";
       string description02 = "Wash the dishes";
-      Order newOrder1 = new Order(description01,orderTitle01);
-      Order newOrder2 = new Order(description02,orderTitle02);
+      int breadQuantity01 = 20;
+      int pastryQuantity01 = 40;
+      int breadQuantity02 = 100;
+      int pastryQuantity02 = 100;
+      Order newOrder1 = new Order(description01,orderTitle01,breadQuantity01,pastryQuantity01);
+      Order newOrder2 = new Order(description02,orderTitle02,breadQuantity02,pastryQuantity02);
 
       Order result = Order.Find(2);
 

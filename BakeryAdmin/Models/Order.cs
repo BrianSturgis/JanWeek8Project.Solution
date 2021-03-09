@@ -5,15 +5,21 @@ namespace BakeryAdmin.Models
 {
   public class Order
   {
+    public int InvoiceTotal { get; set; }
+    public int QuantityBread { get; set; }
+    public int QuantityPastry { get; set; }
     public string Description { get; set; }
     public string OrderTitle { get; set; }
     public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
 
-    public Order(string orderTitle, string description)
+    public Order(int invoiceTotal,string orderTitle, string description, int quantityBread, int quantityPastry)
     {
+      InvoiceTotal = invoiceTotal;
       OrderTitle = orderTitle;
       Description = description;
+      QuantityBread = quantityBread;
+      QuantityPastry = quantityPastry;
       _instances.Add(this);
       Id = _instances.Count;
     }

@@ -85,7 +85,9 @@ namespace BakeryAdmin.Tests
     {
       string orderTitle01 = "Allora Cafe food";
       string description = "veggies";
-      Order newOrder = new Order(description,orderTitle01);
+      int breadQuantity01 = 20;
+      int pastryQuantity01 = 40;
+      Order newOrder = new Order(description,orderTitle01,breadQuantity01,pastryQuantity01);
       List<Order> newList = new List<Order> { newOrder };
       string name = "Work";
       Vendor newVendor = new Vendor(name);
