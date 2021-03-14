@@ -7,17 +7,17 @@
 
 <h1>Bakery Order Details: </h1>
 <ol>
-    <h3>Vendor: @Model["vendors"].vendor.Name</h3>
-    <h3>Date Ordered: @Model["orders"].Date</h3>
-    <h3>Order Title: @Model["orders"].Description</h3>
-    <h3>Bread Quantity: @Model["orders"].QuantityBread</h3>
+    <h3>Vendor: @Model["vendor"].Name</h3>
+    <h3>Date Ordered: @Model["order"].Date</h3>
+    <h3>Order Title: @Model["order"].Description</h3>
+    <h3>Bread Quantity: @Model["order"].QuantityBread</h3>
     <h3>Total Bread Cost: $ TBD</h3>
-    <h3>Pastry Quantity: @Model["orders"].QuantityPastry</h3>
+    <h3>Pastry Quantity: @Model["order"].QuantityPastry</h3>
     <h3>Total Pastry Cost: $ TBD</h3>
-    <h3>Invoice Total: $ @Model["orders"].InvoiceTotal </h3>
+    <h3>Invoice Total: $ @Model["order"].InvoiceTotal </h3>
 </ol>
 
 
 
-<a href='/vendors/@Model["vendors"].Id/orders/new'>Add another order</a>
+<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
 <a href='/vendors'>View all vendors</a>
