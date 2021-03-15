@@ -84,7 +84,7 @@ Contributions are what make the open source community such an amazing place to b
 1. Fork the project on GirHub
     * Follow [Installation and Setup Requirements](#setup-and-installation-requirements) above
 2. Create your Feature Branch: ```$ git checkout -b YourFeatureBranchName```
-3. Commit your Changes ```$ git commit -m 'Add some Amazing Feature'```
+3. Commit your Changes ```$ git commit -m 'Feature name'```
 4. Push to your feature branch on Github ```$ git push origin YourFeatureBranchName```
 5. Open a Pull Request
 
