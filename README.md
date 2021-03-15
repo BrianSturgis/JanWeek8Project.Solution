@@ -38,7 +38,6 @@ This application is for placing orders for a bakery.
 * To launch the program, run the terminal command: ```dotnet run```
 
 
-
 ## Run Tests
 - Open Terminal, navigate into the "BakeryAdmin.Tests/" folder in the command line
 Run the following command $"dotnet restore" to retrieve and install the packages we listed in .csproj in our application.

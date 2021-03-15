@@ -2,9 +2,6 @@
   Layout = "_Layout";
 }
 
-
-@using BakeryAdmin.Models;
-
 <h1>Bakery Order Details: </h1>
 <ol>
     <h3>Vendor: @Model["vendor"].Name</h3>
@@ -16,8 +13,6 @@
     <h3>Total Pastry Cost: $ TBD</h3>
     <h3>Invoice Total: $ @Model["order"].InvoiceTotal </h3>
 </ol>
-
-
 
 <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
 <a href='/vendors'>View all vendors</a>

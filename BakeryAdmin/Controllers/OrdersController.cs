@@ -7,7 +7,6 @@ namespace BakeryAdmin.Controllers
   public class OrdersController : Controller
   {
 
-    
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
@@ -15,14 +14,12 @@ namespace BakeryAdmin.Controllers
     return View(vendor);
     }
 
-
     [HttpPost("/orders/delete")]
     public ActionResult DeleteAll()
     {
     Order.ClearAll();
     return View();
     }
-
 
     [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
@@ -34,6 +31,5 @@ namespace BakeryAdmin.Controllers
     model.Add("vendor", vendor);
     return View(model);
     }
-
   }
 }
